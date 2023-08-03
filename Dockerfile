@@ -19,9 +19,14 @@ RUN pip install pip --upgrade
 RUN pip install pygame moderngl PyGLM numba
 RUN pip install pyvirtualdisplay
 
+RUN apt-get install -y kmod
+COPY NVIDIA-Linux-x86_64-515.48.07.run /opt/NVIDIA-Linux-x86_64-515.48.07.run
+RUN sh /opt/NVIDIA-Linux-x86_64-515.48.07.run  --accept-license --ui=none --no-kernel-module --no-questions
+RUN rm /opt/NVIDIA-Linux-x86_64-515.48.07.run
 
 # change work directory
 WORKDIR /opt/work
+
 
 # /bin/sh
 # ENTRYPOINT ["python"]
