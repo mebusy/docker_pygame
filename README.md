@@ -19,3 +19,6 @@ defaults read org.xquartz.X11  enable_iglx
 
 
 
+https://github.com/XQuartz/XQuartz/issues/144
+
+
