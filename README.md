@@ -24,7 +24,7 @@ https://github.com/XQuartz/XQuartz/issues/144
 
 Nvidia Driver
 
-apt-get install -y build-essential kmod 
+apt-get install -y   kmod 
 
 https://download.nvidia.com/XFree86/Linux-x86_64/515.48.07/NVIDIA-Linux-x86_64-515.48.07.run
 
