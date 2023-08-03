@@ -11,6 +11,8 @@
 
 https://download.nvidia.com/XFree86/Linux-x86_64/515.48.07/NVIDIA-Linux-x86_64-515.48.07.run
 
+## NOTE
+
 https://saturncloud.io/blog/can-i-use-my-gpu-from-a-docker-container-on-a-macbook-pro-amd-radeon-gpu/
 
 maybe + mesa-utils xserver-xorg-video-all
