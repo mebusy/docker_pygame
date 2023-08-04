@@ -9,16 +9,10 @@
 
 ## Before build local image
 
-https://download.nvidia.com/XFree86/Linux-x86_64/515.48.07/NVIDIA-Linux-x86_64-515.48.07.run
+~https://download.nvidia.com/XFree86/Linux-x86_64/515.48.07/NVIDIA-Linux-x86_64-515.48.07.run~
 
-pygame in docker require nvidia driver to work 
+~pygame in docker require nvidia driver to work~
 
-in Dockerfile
-
-```docker
-RUN apt-get install -y kmod 
-RUN sh NVIDIA-Linux-x86_64-515.48.07.run   --accept-license --ui=none --no-kernel-module --no-questions
-```
 
 ## NOTE
 
@@ -39,7 +33,11 @@ defaults read org.xquartz.X11  enable_iglx
 
 https://saturncloud.io/blog/can-i-use-my-gpu-from-a-docker-container-on-a-macbook-pro-amd-radeon-gpu/
 
-maybe + mesa-utils xserver-xorg-video-all
+
+
+## XQuartz OpenGL Version support issue
+
+Solution: Run a [VcxSrv](https://sourceforge.net/projects/vcxsrv/) on windows instead.
 
 
 ```
