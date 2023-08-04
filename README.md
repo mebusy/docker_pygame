@@ -67,5 +67,24 @@ OpenGL extensions:
 To get full OpenGL support, you’ll want to use “direct” rendering. Direct rendering supports the latest OpenGL versions, while Indirect rendering fell out of vogue years ago and does not.
 
 
+OpenGL with X11 can run in two different modes: direct rendering and indirect rendering. The difference between them is that indirect rendering uses the GLX protocol to relay the OpenGL commands from the program to the hardware, which limits OpenGL capabilities to OpenGL 1.4.
+
+When using OpenGL over X11 with SSH, quite often direct rendering is not available and you have to use indirect rendering. 
+
+----
+
+Platform Issue (MacOSX): When MacOSX 10.7 introduced support for OpenGL beyond 2.1, they also introduced the core/compatibility dichotomy. However, they did not introduce support for the compatibility profile itself. Instead, MacOSX gives you a choice: core profile for versions 3.2 or higher, or just version 2.1. There is no way to get access to features after 2.1 and still access the Fixed Function Pipeline.
+
+
+OpenGL > 3.0 has a core version number (in your case 4.1) and a compatibility version number (pegged at 3.0). The trick is to convince Minecraft to use the right version number. On one of my computers (running Devuan Linux Ascii - similar to Debian 9) I found you can insert the following lines in your launcher script, before invoking Java:
+
+export MESA_GL_VERSION_OVERRIDE=<yourCoreVersionNumberHere> # i.e. 4.1
+export MESA_GLSL_VERSION_OVERRIDE=<yourCoreVersionNumberWithoutTheDecimalPaddedWithZeros> # i.e. 410
+
+However, this is not a guaranteed fix, because I tried the same thing on my laptop and Minecraft threw a fatal error.
+
+---
+
+https://www.scm.com/doc/Installation/Remote_GUI.html
 
 
