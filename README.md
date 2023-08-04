@@ -42,5 +42,30 @@ https://saturncloud.io/blog/can-i-use-my-gpu-from-a-docker-container-on-a-macboo
 maybe + mesa-utils xserver-xorg-video-all
 
 
+```
+glxinfo | grep ":" 
+
+name of display: 10.192.89.36:0
+display: 10.192.89.36:0  screen: 0
+direct rendering: Yes
+server glx vendor string: SGI
+server glx version string: 1.4
+server glx extensions:
+client glx vendor string: Mesa Project and SGI
+client glx version string: 1.4
+client glx extensions:
+GLX version: 1.4
+GLX extensions:
+OpenGL vendor string: ATI Technologies Inc.
+OpenGL renderer string: AMD Radeon Pro 560X OpenGL Engine
+OpenGL version string: 2.1 ATI-4.12.7   # <== GL version supported
+OpenGL shading language version string: 1.20
+OpenGL extensions:
+160 GLXFBConfigs:
+```
+
+To get full OpenGL support, you’ll want to use “direct” rendering. Direct rendering supports the latest OpenGL versions, while Indirect rendering fell out of vogue years ago and does not.
+
+
 
 
